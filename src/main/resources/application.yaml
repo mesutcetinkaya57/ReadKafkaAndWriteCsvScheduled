@@ -1,0 +1,24 @@
+spring:
+  profiles:
+    active: dev
+    
+---
+spring:
+  profiles: dev  
+  kafka:
+    consumer:
+      security:
+        protocol: SSL
+
+
+filePath: src/main/resources/FullData.csv
+kafka:
+  properties:
+    DayOfPoll : 02
+    kafka_server_address : localhost:9092
+    timeoutOfMS: 100000
+    AUTO_OFFSET_RESET_CONFIG : earliest
+    topic_name : deviceInfo
+    group_id_config : deviceInfo
+  
+
